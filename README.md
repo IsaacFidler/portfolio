@@ -1,44 +1,59 @@
-# Getting Started
+# Isaac Fidler – Portfolio
 
-First, run the development server:
+A modern, responsive portfolio website for Isaac Fidler, Full-stack Web Developer based in London. Showcases selected projects, experience, and skills, with a contact form for collaboration and opportunities.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🖥️ Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+1. **Install dependencies:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   yarn install
+   # or
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Run the development server:**
 
-## Deploy on Vercel
+   ```bash
+   yarn dev
+   # or
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
 
-## Contact Form
+## ✉️ Contact Form
 
-The “Get In Touch” form on this site is powered by [FormSubmit](https://formsubmit.co/). To configure where messages are sent, open `src/components/portfolio/index.tsx` and replace the email address in the form `action` attribute with your own:
+The “Get In Touch” form is powered by [FormSubmit](https://formsubmit.co/). To change the recipient email, edit the `action` attribute in `src/components/portfolio/index.tsx`:
 
 ```tsx
 <form action="https://formsubmit.co/youremail@example.com" method="POST">
 ```
 
-By default, CAPTCHA is disabled via the hidden `<input name="_captcha" value="false" />`. You can also customize the email subject by editing the hidden `<input name="_subject" />` value.
+By default, CAPTCHA is disabled and the email subject is set via hidden inputs. You can further customize these as needed.
+
+---
+
+## 📫 Contact & Links
+
+- **Email:** <zac.fidler2@gmail.com>
+- **LinkedIn:** [linkedin.com/in/isaac-fidler](https://www.linkedin.com/in/isaac-fidler/)
+- **GitHub:** [github.com/IsaacFidler](https://github.com/IsaacFidler)
+
+---
+
+© {year} Isaac Fidler. All rights reserved.
