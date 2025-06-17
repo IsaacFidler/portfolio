@@ -31,61 +31,80 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
+      title: 'Farmer App (BX)',
       description:
-        'A full-stack e-commerce solution built with Next.js, Stripe, and PostgreSQL. Features include user authentication, product management, and order processing.',
-      technologies: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
+        'A Next.js application for farmers to digitise operations, track environmental impact, and manage soil carbon credit projects.',
+      technologies: ['Next.js', 'TypeScript', 'Firebase', 'GCP'],
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/IsaacFidler',
     },
     {
-      title: 'Task Management App',
+      title: 'Customer App (BX)',
       description:
-        'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
+        'A React-based dashboard for retailers to monitor farmer performance, yields, and sustainability metrics.',
+      technologies: ['React', 'Node.js', 'Mixpanel', 'PostgreSQL'],
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/IsaacFidler',
     },
     {
-      title: 'Weather Dashboard',
+      title: 'Internal Admin Tools (BX)',
       description:
-        'A responsive weather dashboard that displays current conditions and forecasts using OpenWeather API with beautiful data visualizations.',
-      technologies: ['Vue.js', 'Chart.js', 'Tailwind CSS', 'API Integration'],
+        'Tools for data uploads, user management, and sandbox environments, including a bespoke Material UI component library (NPM package).',
+      technologies: ['Material UI', 'NPM', 'Node.js', 'TypeScript'],
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/IsaacFidler',
     },
     {
-      title: 'Portfolio Website',
+      title: 'AI-powered ETL Pipeline',
       description:
-        'A modern, responsive portfolio website built with Next.js and Tailwind CSS, featuring smooth animations and optimized performance.',
-      technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
+        'Automated data transformation pipeline using Google Cloud Functions, API Gateway, Pub/Sub, and OpenAI API.',
+      technologies: ['GCP', 'API Gateway', 'OpenAI', 'Terraform'],
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/IsaacFidler',
     },
   ];
 
   const experience = [
     {
-      title: 'Senior Full-Stack Developer',
-      company: 'Tech Solutions Inc.',
-      period: '2022 - Present',
+      title: 'Software Engineer',
+      company: 'BX',
+      period: '2021 - Present',
       description:
-        'Lead development of web applications using React, Node.js, and cloud technologies.',
+        'Led development of web and backend applications, built and maintained the core API with the team, built component libraries, optimised performance, integrated third-party APIs, managed cloud infrastructure, and mentored junior engineers.',
     },
     {
-      title: 'Frontend Developer',
-      company: 'Digital Agency Co.',
-      period: '2020 - 2022',
+      title: 'Music Computing, BSc',
+      company: 'Goldsmiths University',
+      period: '2017 - 2021',
       description:
-        'Developed responsive websites and web applications for various clients.',
+        'Studied Music Computing, focusing on creative technology and software development.',
     },
-    {
-      title: 'Junior Developer',
-      company: 'StartUp Ventures',
-      period: '2019 - 2020',
-      description:
-        'Contributed to multiple projects while learning modern web development practices.',
-    },
+  ];
+
+  const skills = [
+    'React',
+    'Next.js',
+    'TypeScript',
+    'Node.js',
+    'PostgreSQL',
+    'Material UI',
+    'Tailwind',
+    'Vercel',
+    'GCP',
+    'Firebase',
+    'Terraform',
+    'API Gateway',
+    'ETL',
+    'Jest',
+    'Mixpanel',
+    'Sentry',
+    'Hotjar',
+    'Express.js',
+    'NestJS',
+    'NPM',
+    'Agile',
+    'Mentoring',
+    'Performance Optimisation',
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -103,7 +122,7 @@ export default function Portfolio() {
         <div className="container mx-auto px-4">
           <div className="flex h-16 items-center justify-between">
             <div className="font-bold text-xl">
-              <Link href="#home">John Doe</Link>
+              <Link href="#home">Isaac Fidler</Link>
             </div>
 
             {/* Desktop Navigation */}
@@ -186,24 +205,32 @@ export default function Portfolio() {
             <Avatar className="w-32 h-32 md:w-40 md:h-40">
               <AvatarImage
                 src="/placeholder.svg?height=160&width=160"
-                alt="John Doe"
+                alt="Isaac Fidler"
               />
-              <AvatarFallback className="text-2xl">JD</AvatarFallback>
+              <AvatarFallback className="text-2xl">IF</AvatarFallback>
             </Avatar>
 
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                John Doe
+                Isaac Fidler
               </h1>
               <h2 className="text-xl md:text-2xl text-muted-foreground">
-                Full-Stack Developer
+                Full-stack Web Developer
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Passionate about creating beautiful, functional web applications
-                that solve real-world problems. I specialize in modern
-                JavaScript frameworks and love turning ideas into digital
-                reality.
+                Full-stack web developer with a passion for building scalable,
+                user-focused applications. Skilled in React, Next.js,
+                TypeScript, and Node.js, with strong experience in performance
+                optimisation, cloud infrastructure, and front-end architecture.
+                At BX, I've led projects across the full stack, mentored junior
+                engineers, and played a key role in growing the engineering team
+                and culture.
               </p>
+              <div className="flex flex-wrap justify-center gap-2 mt-2">
+                <Badge variant="secondary">zac.fidler2@gmail.com</Badge>
+                <Badge variant="secondary">+44 7368 318988</Badge>
+                <Badge variant="secondary">London</Badge>
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -298,24 +325,21 @@ export default function Portfolio() {
               <h3 className="text-2xl font-semibold mb-6">My Story</h3>
               <div className="prose prose-gray max-w-none">
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  I&apos;m a passionate full-stack developer with over 4 years
-                  of experience creating web applications that make a
-                  difference. My journey began with a curiosity about how
-                  websites work, which quickly evolved into a deep love for
-                  coding and problem-solving.
+                  I'm a full-stack web developer based in London, passionate
+                  about building scalable, user-focused applications. My
+                  expertise spans React, Next.js, TypeScript, Node.js, and cloud
+                  infrastructure. At BX, I've led the development of web and
+                  mobile apps, built component libraries, and mentored junior
+                  engineers. I thrive in agile teams and enjoy solving complex
+                  technical challenges.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  I specialize in modern JavaScript frameworks like React and
-                  Next.js, and I&apos;m equally comfortable working with backend
-                  technologies like Node.js and databases. I believe in writing
-                  clean, maintainable code and creating user experiences that
-                  are both beautiful and functional.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  When I&apos;m not coding, you can find me exploring new
-                  technologies, contributing to open-source projects, or sharing
-                  my knowledge through blog posts and mentoring other
-                  developers.
+                  I have a strong background in web development, front-end &
+                  backend architecture, and cloud deployments. I enjoy working
+                  with modern JavaScript frameworks and have experience
+                  integrating third-party APIs, optimising Core Web Vitals,
+                  managing infrastructure as code, and building component
+                  libraries.
                 </p>
               </div>
             </div>
@@ -346,6 +370,16 @@ export default function Portfolio() {
                   </div>
                 ))}
               </div>
+              <div className="mt-8">
+                <h4 className="font-semibold mb-2">Skills</h4>
+                <div className="flex flex-wrap gap-2">
+                  {skills.map((skill, idx) => (
+                    <Badge key={idx} variant="secondary">
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -359,10 +393,15 @@ export default function Portfolio() {
               Get In Touch
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind or want to collaborate? I&apos;d love to
-              hear from you. Send me a message and let&apos;s create something
-              amazing together.
+              Have a project in mind or want to collaborate? I'd love to hear
+              from you. Send me a message and let's create something amazing
+              together.
             </p>
+            <div className="flex flex-wrap justify-center gap-2 mt-4">
+              <Badge variant="secondary">zac.fidler2@gmail.com</Badge>
+              <Badge variant="secondary">+44 7368 318988</Badge>
+              <Badge variant="secondary">London</Badge>
+            </div>
           </div>
 
           <div className="max-w-2xl mx-auto">
@@ -370,8 +409,8 @@ export default function Portfolio() {
               <CardHeader>
                 <CardTitle>Send me a message</CardTitle>
                 <CardDescription>
-                  Fill out the form below and I&apos;ll get back to you as soon
-                  as possible.
+                  Fill out the form below and I'll get back to you as soon as
+                  possible.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -422,7 +461,7 @@ export default function Portfolio() {
             <div className="flex items-center space-x-6">
               <Button variant="ghost" size="sm" asChild>
                 <Link
-                  href="https://github.com"
+                  href="https://github.com/IsaacFidler"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -432,7 +471,7 @@ export default function Portfolio() {
               </Button>
               <Button variant="ghost" size="sm" asChild>
                 <Link
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/isaac-fidler/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -441,7 +480,7 @@ export default function Portfolio() {
                 </Link>
               </Button>
               <Button variant="ghost" size="sm" asChild>
-                <Link href="mailto:john@example.com">
+                <Link href="mailto:zac.fidler2@gmail.com">
                   <Mail className="h-5 w-5" />
                   <span className="sr-only">Email</span>
                 </Link>
@@ -449,10 +488,8 @@ export default function Portfolio() {
             </div>
             <div className="text-center text-sm text-muted-foreground">
               <p>
-                &copy; {new Date().getFullYear()} John Doe. All rights reserved.
-              </p>
-              <p className="mt-1">
-                Built with Next.js, Tailwind CSS, and shadcn/ui
+                &copy; {new Date().getFullYear()} Isaac Fidler. All rights
+                reserved.
               </p>
             </div>
           </div>
