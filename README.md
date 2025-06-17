@@ -1,6 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
+# Getting Started
 
 First, run the development server:
 
@@ -34,3 +32,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Contact Form
+
+The “Get In Touch” form on this site is powered by [FormSubmit](https://formsubmit.co/). To configure where messages are sent, open `src/components/portfolio/index.tsx` and replace the email address in the form `action` attribute with your own:
+
+```tsx
+<form action="https://formsubmit.co/youremail@example.com" method="POST">
+```
+
+By default, CAPTCHA is disabled via the hidden `<input name="_captcha" value="false" />`. You can also customize the email subject by editing the hidden `<input name="_subject" />` value.

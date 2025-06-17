@@ -39,18 +39,25 @@ export default function Portfolio() {
       githubUrl: 'https://github.com/IsaacFidler',
     },
     {
-      title: 'Customer App (BX)',
+      title: 'API (BX)',
       description:
-        'A React-based dashboard for retailers to monitor farmer performance, yields, and sustainability metrics.',
-      technologies: ['React', 'Node.js', 'Mixpanel', 'PostgreSQL'],
+        'A Node.js API for the BX platform, used by the farmer and admin apps.',
+      technologies: [
+        'Node.js',
+        'PostgreSQL',
+        'Firebase',
+        'GCP',
+        'Terraform',
+        'NestJS',
+      ],
       liveUrl: '#',
       githubUrl: 'https://github.com/IsaacFidler',
     },
     {
-      title: 'Internal Admin Tools (BX)',
+      title: 'UI Library (BX)',
       description:
-        'Tools for data uploads, user management, and sandbox environments, including a bespoke Material UI component library (NPM package).',
-      technologies: ['Material UI', 'NPM', 'Node.js', 'TypeScript'],
+        'A bespoke Material UI component library (NPM package) for the BX platform.',
+      technologies: ['Material UI', 'styled-components', 'TypeScript'],
       liveUrl: '#',
       githubUrl: 'https://github.com/IsaacFidler',
     },
@@ -58,7 +65,7 @@ export default function Portfolio() {
       title: 'AI-powered ETL Pipeline',
       description:
         'Automated data transformation pipeline using Google Cloud Functions, API Gateway, Pub/Sub, and OpenAI API.',
-      technologies: ['GCP', 'API Gateway', 'OpenAI', 'Terraform'],
+      technologies: ['Python', 'GCP', 'OpenAI', 'Terraform'],
       liveUrl: '#',
       githubUrl: 'https://github.com/IsaacFidler',
     },
@@ -295,9 +302,6 @@ export default function Portfolio() {
                     ))}
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" asChild>
-                      <Link href={project.liveUrl}>View Project</Link>
-                    </Button>
                     <Button size="sm" variant="outline" asChild>
                       <Link href={project.githubUrl}>GitHub</Link>
                     </Button>
@@ -414,13 +418,23 @@ export default function Portfolio() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form className="space-y-6">
+                <form
+                  action="https://formsubmit.co/zac.fidler2@gmail.com"
+                  method="POST"
+                  className="space-y-6"
+                >
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="New message from portfolio site"
+                  />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium">
                         Name
                       </label>
-                      <Input id="name" placeholder="Your name" />
+                      <Input id="name" name="name" placeholder="Your name" />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-medium">
@@ -428,6 +442,7 @@ export default function Portfolio() {
                       </label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         placeholder="your.email@example.com"
                       />
@@ -439,6 +454,7 @@ export default function Portfolio() {
                     </label>
                     <Textarea
                       id="message"
+                      name="message"
                       placeholder="Tell me about your project or just say hello!"
                       className="min-h-[120px]"
                     />
