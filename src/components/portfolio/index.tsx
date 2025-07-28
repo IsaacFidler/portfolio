@@ -211,8 +211,9 @@ export default function Portfolio() {
           <div className="flex flex-col items-center text-center space-y-8">
             <Avatar className="w-32 h-32 md:w-40 md:h-40">
               <AvatarImage
-                src="/placeholder.svg?height=160&width=160"
+                src="/isaacAvatarImage.JPG"
                 alt="Isaac Fidler"
+                className="object-cover translate-x-3 -translate-y-4 scale-120"
               />
               <AvatarFallback className="text-2xl">IF</AvatarFallback>
             </Avatar>
