@@ -72,6 +72,39 @@ export default function Portfolio() {
     },
   ];
 
+  const personalProjects = [
+    {
+      title: 'Stems',
+      description:
+        'Full-stack music project management platform for tracking productions from idea to release. Features Kanban-style boards with customisable stages (Sketch → Polish → Mixing → Mastering → Released), task management with priorities, activity feed, BPM/key/genre metadata, collaborator support, and release grouping.',
+      technologies: [
+        'Next.js',
+        'TypeScript',
+        'PostgreSQL',
+        'Prisma',
+        'Styled Components',
+      ],
+      status: 'Active',
+      githubUrl: 'https://github.com/IsaacFidler',
+    },
+    {
+      title: 'Playlist Purchase',
+      description:
+        'Spotify integration app that extracts playlist data via OAuth and cross-references tracks with iTunes Store and Discogs marketplace to surface purchase links and vinyl pricing.',
+      technologies: ['Next.js', 'TypeScript', 'Supabase', 'Spotify API'],
+      status: 'Prototype',
+      githubUrl: 'https://github.com/IsaacFidler',
+    },
+    {
+      title: 'Beat Weaver',
+      description:
+        'Web-based sampler sequencer for generating randomised drum loops from sample libraries. Enables rapid idea generation for music production workflows.',
+      technologies: ['React', 'Web Audio API'],
+      status: 'Personal Tool',
+      githubUrl: 'https://github.com/IsaacFidler',
+    },
+  ];
+
   const experience = [
     {
       title: 'Software Engineer',
@@ -312,6 +345,57 @@ export default function Portfolio() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Personal Projects */}
+          <div className="mt-20">
+            <div className="text-center mb-16">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                Personal Projects
+              </h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Side projects built for personal use, exploring music technology
+                and creative tools.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {personalProjects.map((project, index) => (
+                <Card
+                  key={index}
+                  className="group hover:shadow-lg transition-shadow"
+                >
+                  <CardHeader>
+                    <div className="flex items-center justify-between mb-2">
+                      <Badge
+                        variant={
+                          project.status === 'Active' ? 'default' : 'outline'
+                        }
+                        className="text-xs"
+                      >
+                        {project.status}
+                      </Badge>
+                      <Button size="sm" variant="ghost" asChild>
+                        <Link href={project.githubUrl}>
+                          <Github className="h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
+                    <CardTitle>{project.title}</CardTitle>
+                    <CardDescription>{project.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <Badge key={techIndex} variant="secondary">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
