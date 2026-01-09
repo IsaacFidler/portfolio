@@ -80,9 +80,8 @@ export default function Portfolio() {
       technologies: [
         'Next.js',
         'TypeScript',
-        'PostgreSQL',
-        'Prisma',
-        'Styled Components',
+        'Supabase',
+        'Tailwind CSS',
       ],
       status: 'Active',
       githubUrl: 'https://github.com/IsaacFidler',
