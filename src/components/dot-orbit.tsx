@@ -86,7 +86,9 @@ export function DotOrbit({
           baseY: y,
           angle: Math.atan2(dy, dx),
           orbitRadius: distFromCenter,
-          orbitSpeed: ((Math.random() * 0.5 + 0.5) * speed * 0.15) / Math.max(distFromCenter, 100),
+          orbitSpeed:
+            ((Math.random() * 0.5 + 0.5) * speed * 0.5) /
+            Math.max(distFromCenter, 100),
         });
       }
     };
@@ -180,7 +182,10 @@ export function DotOrbit({
             ctx.beginPath();
             ctx.moveTo(dot.x, dot.y);
             ctx.lineTo(other.x, other.y);
-            ctx.strokeStyle = lineColor.replace(/[\d.]+\)$/, `${opacity * 0.3})`);
+            ctx.strokeStyle = lineColor.replace(
+              /[\d.]+\)$/,
+              `${opacity * 0.3})`,
+            );
             ctx.lineWidth = 1;
             ctx.stroke();
           }
@@ -204,7 +209,17 @@ export function DotOrbit({
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [dotColor, lineColor, dotCount, speed, linkDistance, dotSize, interactionRadius, interactionType, interactionStrength]);
+  }, [
+    dotColor,
+    lineColor,
+    dotCount,
+    speed,
+    linkDistance,
+    dotSize,
+    interactionRadius,
+    interactionType,
+    interactionStrength,
+  ]);
 
   return (
     <canvas
