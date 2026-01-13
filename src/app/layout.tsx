@@ -1,3 +1,4 @@
+import { DotOrbit } from '@/components/dot-orbit';
 import { GrainOverlay } from '@/components/grain-overlay';
 import { ThemeProvider } from '@/components/theme-provider';
 import '@fontsource/jetbrains-mono/400.css';
@@ -38,6 +39,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider defaultTheme="system">
+          <DotOrbit />
           <GrainOverlay />
           {children}
         </ThemeProvider>
