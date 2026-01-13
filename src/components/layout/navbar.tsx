@@ -17,12 +17,12 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md dark:bg-black/70">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <div className="font-bold text-xl">
-            <Link href="/">Isaac Fidler</Link>
-          </div>
+          <Link href="/" className="logo-text text-xl hover:text-primary transition-colors">
+            Isaac Fidler
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

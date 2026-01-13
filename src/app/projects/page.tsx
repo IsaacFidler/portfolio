@@ -20,7 +20,7 @@ export default function ProjectsPage() {
         <section className="py-20 md:py-24">
           <div className="container mx-auto px-4">
             <FadeIn>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Projects</h1>
+              <h1 className="text-4xl md:text-5xl heading-display mb-4">Projects</h1>
               <p className="text-xl text-muted-foreground max-w-2xl">
                 A collection of music-tech tools and full-stack applications.
                 Personal projects are built for musicians and producers;
@@ -35,7 +35,7 @@ export default function ProjectsPage() {
           <div className="container mx-auto px-4">
             <FadeIn>
               <div className="mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                <h2 className="text-2xl md:text-3xl heading-display mb-4">
                   Music-Tech Projects
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl">
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
           <div className="container mx-auto px-4">
             <FadeIn>
               <div className="mb-12">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                <h2 className="text-2xl md:text-3xl heading-display mb-4">
                   Professional Work
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl">

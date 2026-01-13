@@ -20,15 +20,15 @@ export function ContactForm() {
       <div className="container mx-auto px-4">
         <FadeIn>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+            <h2 className="text-3xl md:text-4xl heading-display mb-4">Get In Touch</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Have a project in mind or want to collaborate? I'd love to hear from
               you. Send me a message and let's create something amazing together.
             </p>
             <div className="flex flex-wrap justify-center gap-2 mt-4">
-              <Badge variant="secondary">zac.fidler2@gmail.com</Badge>
-              <Badge variant="secondary">+44 7368 318988</Badge>
-              <Badge variant="secondary">London</Badge>
+              <Badge variant="secondary" className="font-data">zac.fidler2@gmail.com</Badge>
+              <Badge variant="secondary" className="font-data">+44 7368 318988</Badge>
+              <Badge variant="secondary" className="font-data">London</Badge>
             </div>
           </div>
         </FadeIn>

@@ -50,7 +50,7 @@ export function Hero() {
           <div className="space-y-4">
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-6xl font-bold tracking-tight"
+              className="text-4xl md:text-6xl heading-display"
             >
               Isaac Fidler
             </motion.h1>
@@ -73,9 +73,9 @@ export function Hero() {
               variants={itemVariants}
               className="flex flex-wrap justify-center gap-2 mt-2"
             >
-              <Badge variant="secondary">zac.fidler2@gmail.com</Badge>
-              <Badge variant="secondary">+44 7368 318988</Badge>
-              <Badge variant="secondary">London</Badge>
+              <Badge variant="secondary" className="font-data">zac.fidler2@gmail.com</Badge>
+              <Badge variant="secondary" className="font-data">+44 7368 318988</Badge>
+              <Badge variant="secondary" className="font-data">London</Badge>
             </motion.div>
           </div>
 
@@ -83,7 +83,11 @@ export function Hero() {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button size="lg" asChild>
+            <Button
+              size="lg"
+              asChild
+              className="bg-gradient-to-r from-[#2E5BFF] to-[#1E40AF] hover:from-[#4D6CFA] hover:to-[#2E5BFF] border-t border-white/10 shadow-lg shadow-[#2E5BFF]/20"
+            >
               <Link href="/projects">View My Work</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>

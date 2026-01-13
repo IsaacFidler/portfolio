@@ -1,4 +1,12 @@
+import { GrainOverlay } from '@/components/grain-overlay';
 import { ThemeProvider } from '@/components/theme-provider';
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/500.css';
+import '@fontsource/montserrat/800.css';
+import '@fontsource/plus-jakarta-sans/400.css';
+import '@fontsource/plus-jakarta-sans/500.css';
+import '@fontsource/plus-jakarta-sans/600.css';
+import '@fontsource/space-grotesk/700.css';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -29,7 +37,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider defaultTheme="system">{children}</ThemeProvider>
+        <ThemeProvider defaultTheme="system">
+          <GrainOverlay />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

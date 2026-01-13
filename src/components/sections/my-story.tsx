@@ -8,7 +8,7 @@ export function MyStory() {
       <div className="container mx-auto px-4">
         <FadeIn>
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">My Story</h2>
+            <h2 className="text-3xl md:text-4xl heading-display mb-8">My Story</h2>
             <div className="prose prose-gray dark:prose-invert max-w-none space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 My journey into software began at Goldsmiths, University of
