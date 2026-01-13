@@ -38,10 +38,10 @@ export function MyStory() {
                 engineering culture.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Today, I'm channelling my energy back into music-tech. My
-                personal projects — Stems, Playlist Purchase, and Beat Weaver —
-                reflect my belief that the best tools for musicians are built by
-                people who understand both the code and the creative process.
+                Today, I'm building full-stack applications across different
+                domains. My personal projects explore creative tools for
+                musicians, but I'm equally excited by any technically
+                challenging problem that lets me ship quality software.
               </p>
             </div>
           </div>

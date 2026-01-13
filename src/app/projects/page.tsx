@@ -8,7 +8,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Projects - Isaac Fidler',
   description:
-    'Music-tech and full-stack web development projects by Isaac Fidler',
+    'Full-stack web development projects by Isaac Fidler - enterprise applications and personal projects.',
 };
 
 export default function ProjectsPage() {
@@ -22,49 +22,16 @@ export default function ProjectsPage() {
             <FadeIn>
               <h1 className="text-4xl md:text-5xl heading-display mb-4">Projects</h1>
               <p className="text-xl text-muted-foreground max-w-2xl">
-                A collection of music-tech tools and full-stack applications.
-                Personal projects are built for musicians and producers;
-                professional work demonstrates enterprise-scale development.
+                A collection of full-stack applications spanning enterprise
+                development and personal projects. From production systems
+                to creative tools.
               </p>
             </FadeIn>
           </div>
         </section>
 
-        {/* Personal Projects - Music Tech (shown first) */}
+        {/* Professional Projects - shown first */}
         <section className="py-16 bg-muted/50">
-          <div className="container mx-auto px-4">
-            <FadeIn>
-              <div className="mb-12">
-                <h2 className="text-2xl md:text-3xl heading-display mb-4">
-                  Music-Tech Projects
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl">
-                  Personal projects exploring the intersection of music
-                  production and software development.
-                </p>
-              </div>
-            </FadeIn>
-
-            <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {personalProjects.map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  title={project.title}
-                  description={project.description}
-                  technologies={project.technologies}
-                  githubUrl={project.githubUrl}
-                  status={project.status}
-                  icon={project.icon}
-                  gradient={project.gradient}
-                  screenshot={project.screenshot}
-                />
-              ))}
-            </StaggerChildren>
-          </div>
-        </section>
-
-        {/* Professional Projects */}
-        <section className="py-16">
           <div className="container mx-auto px-4">
             <FadeIn>
               <div className="mb-12">
@@ -89,6 +56,39 @@ export default function ProjectsPage() {
                   liveUrl={project.liveUrl}
                   icon={project.icon}
                   gradient={project.gradient}
+                />
+              ))}
+            </StaggerChildren>
+          </div>
+        </section>
+
+        {/* Personal Projects */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <FadeIn>
+              <div className="mb-12">
+                <h2 className="text-2xl md:text-3xl heading-display mb-4">
+                  Personal Projects
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl">
+                  Side projects exploring different ideas and technologies,
+                  with a focus on creative tools for musicians.
+                </p>
+              </div>
+            </FadeIn>
+
+            <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {personalProjects.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  title={project.title}
+                  description={project.description}
+                  technologies={project.technologies}
+                  githubUrl={project.githubUrl}
+                  status={project.status}
+                  icon={project.icon}
+                  gradient={project.gradient}
+                  screenshot={project.screenshot}
                 />
               ))}
             </StaggerChildren>

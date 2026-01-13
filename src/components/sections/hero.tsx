@@ -58,16 +58,15 @@ export function Hero() {
               variants={itemVariants}
               className="text-xl md:text-2xl text-muted-foreground"
             >
-              Full-Stack Developer | Building at the Intersection of Music & Code
+              Full-Stack Developer
             </motion.h2>
             <motion.p
               variants={itemVariants}
               className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
             >
-              Full-stack developer with roots in music computing. I build scalable
-              web applications and creative tools for musicians and producers.
-              From production workflow apps to audio-reactive interfaces, I bring
-              technical rigour to creative technology.
+              Full-stack developer with a background in music computing. I build
+              scalable web applications with a focus on clean code, great UX, and
+              solving real problems. Passionate about shipping quality software.
             </motion.p>
             <motion.div
               variants={itemVariants}
