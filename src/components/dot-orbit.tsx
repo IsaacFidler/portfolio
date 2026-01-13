@@ -30,7 +30,7 @@ export function DotOrbit({
   dotColor = 'rgba(46, 91, 255, 0.6)',
   lineColor = 'rgba(46, 91, 255, 0.15)',
   dotCount = 80,
-  speed = 0.5,
+  speed = 0.1,
   linkDistance = 150,
   dotSize = 2,
   interactionRadius = 150,
@@ -86,7 +86,7 @@ export function DotOrbit({
           baseY: y,
           angle: Math.atan2(dy, dx),
           orbitRadius: distFromCenter,
-          orbitSpeed: (Math.random() * 0.5 + 0.5) * speed * 0.01,
+          orbitSpeed: (Math.random() * 0.5 + 0.5) * speed * 0.002,
         });
       }
     };
