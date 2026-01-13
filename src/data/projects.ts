@@ -31,6 +31,7 @@ export const personalProjects: PersonalProject[] = [
     githubUrl: 'https://github.com/IsaacFidler',
     icon: '🎹',
     gradient: 'from-purple-500/20 to-pink-500/10',
+    screenshot: '/projectImages/stems-home.png',
   },
   {
     title: 'Playlist Purchase',
@@ -41,6 +42,7 @@ export const personalProjects: PersonalProject[] = [
     githubUrl: 'https://github.com/IsaacFidler',
     icon: '🎧',
     gradient: 'from-green-500/20 to-emerald-500/10',
+    screenshot: '/projectImages/playlist-purchase-homepage.png',
   },
   {
     title: 'Beat Weaver',
@@ -51,6 +53,7 @@ export const personalProjects: PersonalProject[] = [
     githubUrl: 'https://github.com/IsaacFidler',
     icon: '🥁',
     gradient: 'from-orange-500/20 to-yellow-500/10',
+    screenshot: '/projectImages/beatweaver-screenshot.png',
   },
 ];
 

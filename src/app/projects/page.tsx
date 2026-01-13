@@ -56,6 +56,7 @@ export default function ProjectsPage() {
                   status={project.status}
                   icon={project.icon}
                   gradient={project.gradient}
+                  screenshot={project.screenshot}
                 />
               ))}
             </StaggerChildren>

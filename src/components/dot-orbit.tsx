@@ -35,7 +35,7 @@ export function DotOrbit({
   dotSize = 2,
   interactionRadius = 150,
   interactionType = 'repel',
-  interactionStrength = 50,
+  interactionStrength = 20,
 }: DotOrbitProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef({ x: -1000, y: -1000 });
@@ -80,13 +80,13 @@ export function DotOrbit({
         dotsRef.current.push({
           x,
           y,
-          vx: (Math.random() - 0.5) * speed,
-          vy: (Math.random() - 0.5) * speed,
+          vx: (Math.random() - 0.5) * speed * 0.005,
+          vy: (Math.random() - 0.5) * speed * 0.005,
           baseX: x,
           baseY: y,
           angle: Math.atan2(dy, dx),
           orbitRadius: distFromCenter,
-          orbitSpeed: (Math.random() * 0.5 + 0.5) * speed * 0.002,
+          orbitSpeed: ((Math.random() * 0.5 + 0.5) * speed * 0.15) / Math.max(distFromCenter, 100),
         });
       }
     };
@@ -124,9 +124,12 @@ export function DotOrbit({
         const targetX = centerX + Math.cos(dot.angle) * dot.orbitRadius;
         const targetY = centerY + Math.sin(dot.angle) * dot.orbitRadius;
 
-        // Ease toward orbit position
-        dot.x += (targetX - dot.x) * 0.02;
-        dot.y += (targetY - dot.y) * 0.02;
+        // Ease toward orbit position (with max speed cap to prevent shooting)
+        const easeX = (targetX - dot.x) * 0.01;
+        const easeY = (targetY - dot.y) * 0.01;
+        const maxSpeed = 0.5;
+        dot.x += Math.max(-maxSpeed, Math.min(maxSpeed, easeX));
+        dot.y += Math.max(-maxSpeed, Math.min(maxSpeed, easeY));
 
         // Add some drift
         dot.x += dot.vx;
