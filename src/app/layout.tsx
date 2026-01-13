@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Isaac Fidler - Full-stack Web Developer',
+  title: 'Isaac Fidler - Full-Stack Developer | Music & Code',
   description:
-    'Portfolio of Isaac Fidler - Full-stack web developer specializing in React, Next.js, TypeScript, and Node.js. Based in London.',
+    'Full-stack developer with a Music Computing background, building tools at the intersection of technology and music. Specializing in React, Next.js, TypeScript, and Node.js.',
 };
 
 export default function RootLayout({
