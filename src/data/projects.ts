@@ -13,14 +13,11 @@ export interface ProfessionalProject {
   title: string;
   description: string;
   technologies: string[];
-  liveUrl: string;
-  githubUrl: string;
+  liveUrl?: string;
   icon: string;
-  gradient: string;
-  screenshot?: string;
 }
 
-// Personal music-tech projects - shown first
+// Personal projects
 export const personalProjects: PersonalProject[] = [
   {
     title: 'Stems',
@@ -57,56 +54,48 @@ export const personalProjects: PersonalProject[] = [
   },
 ];
 
-// Professional projects - shown second
+// Professional projects at BX
 export const professionalProjects: ProfessionalProject[] = [
   {
-    title: 'Farmer App (BX)',
+    title: 'SaaS Platform',
     description:
-      'Next.js application enabling farmers to digitise operations and track environmental impact. Optimised Core Web Vitals for performance on rural networks. Worked with geospatial data visualisation (Mapbox), complex multi-step form workflows, and data processing.',
+      'Production-grade Next.js application managing sustainability data for 60,000+ acres. Built geospatial visualisations with Mapbox, complex multi-step form workflows, and optimised Core Web Vitals for performance on rural networks. Served as sole engineer for 4 months during a critical transition, maintaining the entire production ecosystem.',
     technologies: ['Next.js', 'TypeScript', 'Firebase', 'GCP', 'Mapbox'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/IsaacFidler',
     icon: '🌱',
-    gradient: 'from-green-600/20 to-lime-500/10',
   },
   {
-    title: 'API (BX)',
+    title: 'Core API',
     description:
-      'Core backend API serving multiple client applications across web and mobile. Contributed to designing RESTful endpoints, implementing authentication flows with Firebase Auth, and managing PostgreSQL migrations. Set up CI/CD pipelines with GitHub Actions and infrastructure-as-code with Terraform for reproducible deployments.',
-    technologies: ['Node.js', 'PostgreSQL', 'Firebase', 'GCP', 'Terraform', 'NestJS'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/IsaacFidler',
+      'Backend API serving multiple client applications across web and mobile. Designed RESTful endpoints, implemented authentication with Firebase Auth, and managed PostgreSQL migrations. Established CI/CD pipelines deploying NestJS to GCP on every merge, with Sentry monitoring and Slack alerting for production reliability.',
+    technologies: ['NestJS', 'PostgreSQL', 'Firebase', 'GCP', 'Terraform'],
     icon: '⚡',
-    gradient: 'from-blue-500/20 to-cyan-500/10',
   },
   {
-    title: 'UI Library (BX)',
+    title: 'Component Library',
     description:
-      'Internal component library published to NPM and used across 3 applications. Built 40+ reusable components with TypeScript and comprehensive Storybook documentation. Reduced frontend development time across the team and ensured consistent design language.',
-    technologies: ['Material UI', 'styled-components', 'TypeScript', 'Storybook'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/IsaacFidler',
+      'Company-wide React component library published to NPM, standardising UI/UX patterns across all products. Built 40+ reusable components with TypeScript and comprehensive Storybook documentation. Significantly reduced frontend development time and ensured consistent design language.',
+    technologies: ['React', 'TypeScript', 'Storybook', 'styled-components'],
     icon: '🎨',
-    gradient: 'from-violet-500/20 to-purple-500/10',
   },
   {
-    title: 'AI-powered ETL Pipeline',
+    title: 'AI ETL Pipeline',
     description:
-      'Automated data transformation system using serverless architecture. Contributed to designing event-driven workflows with Cloud Pub/Sub and implemented OpenAI-powered data extraction from unstructured documents.',
+      'AI-powered data transformation system using serverless architecture for automated processing of large environmental datasets. Built event-driven workflows with Cloud Pub/Sub and OpenAI API for extracting structured data from unstructured documents.',
     technologies: ['Python', 'GCP', 'OpenAI', 'Terraform', 'Pub/Sub'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/IsaacFidler',
     icon: '🤖',
-    gradient: 'from-slate-500/20 to-zinc-500/10',
   },
   {
-    title: 'AI Chatbot (BX)',
+    title: 'AI Chatbot',
     description:
-      'LLM-powered chatbot built by forking and customising Flowwise for our use case. Enabled users to query documentation, complete tasks, navigate to relevant pages, and upload files directly through a conversational interface.',
-    technologies: ['Flowwise', 'LLM', 'TypeScript', 'Node.js'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/IsaacFidler',
+      'LLM-powered chatbot built by forking and customising the open-source Flowise platform. Enabled users to query documentation, complete tasks, navigate to relevant pages, and upload files through a conversational interface.',
+    technologies: ['Flowise', 'OpenAI', 'TypeScript', 'Node.js'],
     icon: '💬',
-    gradient: 'from-indigo-500/20 to-blue-500/10',
+  },
+  {
+    title: 'Internal Admin Tools',
+    description:
+      'Bespoke internal tooling for data uploads, user management, and sandbox environments. Automated manual engineering tasks and streamlined operations for the support and product teams.',
+    technologies: ['React', 'TypeScript', 'Node.js', 'Firebase'],
+    icon: '🛠️',
   },
 ];

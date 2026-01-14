@@ -7,11 +7,11 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
-    title: 'Software Engineer',
+    title: 'Full-Stack Engineer',
     company: 'BX',
     period: '2021 - December 2024',
     description:
-      'Led development of web and backend applications, built and maintained the core API with the team, built component libraries, optimised performance, integrated third-party APIs, managed cloud infrastructure, and mentored junior engineers.',
+      'Helped scale the engineering team from 2 to 11 contributors, conducting technical interviews and defining onboarding processes. Led development of production applications, built company-wide component libraries, and established CI/CD pipelines. Mentored junior engineers through weekly training sessions.',
   },
   {
     title: 'Web Development Bootcamp',

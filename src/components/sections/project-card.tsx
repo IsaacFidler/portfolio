@@ -20,12 +20,13 @@ interface ProjectCardProps {
   title: string;
   description: string;
   technologies: string[];
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
   status?: string;
   icon?: string;
   gradient?: string;
   screenshot?: string;
+  compact?: boolean;
 }
 
 export function ProjectCard({
@@ -38,6 +39,7 @@ export function ProjectCard({
   icon = '💻',
   gradient = 'from-primary/20 to-primary/5',
   screenshot,
+  compact = false,
 }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -51,6 +53,8 @@ export function ProjectCard({
       y: e.clientY - rect.top,
     });
   };
+
+  const showGithub = githubUrl && githubUrl !== '#';
 
   return (
     <motion.div
@@ -79,31 +83,32 @@ export function ProjectCard({
             : 'hover:shadow-lg'
         }`}
       >
-        {/* Project Image or Placeholder */}
-        <div className="aspect-video relative border-b border-border/50 overflow-hidden">
-          {screenshot ? (
-            <Image
-              src={screenshot}
-              alt={`${title} screenshot`}
-              fill
-              className="object-cover"
-            />
-          ) : (
-            <div
-              className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center`}
-            >
-              <div className="text-center">
-                <span className="text-5xl block mb-2">{icon}</span>
-                <span className="text-sm text-muted-foreground font-data">
-                  {title}
-                </span>
+        {/* Project Image or Placeholder - only show if not compact */}
+        {!compact && (
+          <div className="aspect-video relative border-b border-border/50 overflow-hidden">
+            {screenshot ? (
+              <Image
+                src={screenshot}
+                alt={`${title} screenshot`}
+                fill
+                className="object-cover"
+              />
+            ) : (
+              <div
+                className={`w-full h-full bg-gradient-to-br ${gradient} flex items-center justify-center`}
+              >
+                <div className="text-center">
+                  <span className="text-5xl block mb-2">{icon}</span>
+                  <span className="text-sm text-muted-foreground font-data">
+                    {title}
+                  </span>
+                </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
+        )}
 
-        {/* Asymmetric Content - offset for editorial look */}
-        <CardHeader className="pb-3 relative">
+        <CardHeader className={`pb-3 relative ${compact ? 'pt-6' : ''}`}>
           <div className="flex items-center justify-between mb-2">
             {status && (
               <Badge
@@ -121,15 +126,19 @@ export function ProjectCard({
                   </Link>
                 </Button>
               )}
-              <Button size="sm" variant="ghost" asChild>
-                <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
-                  <Github className="h-4 w-4" />
-                </Link>
-              </Button>
+              {showGithub && (
+                <Button size="sm" variant="ghost" asChild>
+                  <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Github className="h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
-          <CardTitle className="text-lg heading-display">{title}</CardTitle>
-          {/* Offset description for asymmetric layout */}
+          <CardTitle className="text-lg heading-display flex items-center gap-2">
+            {compact && <span className="text-2xl">{icon}</span>}
+            {title}
+          </CardTitle>
           <CardDescription className="-ml-1 mt-1">{description}</CardDescription>
         </CardHeader>
 
