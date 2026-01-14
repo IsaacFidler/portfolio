@@ -19,7 +19,7 @@ export function Navbar() {
   return (
     <div className="sticky top-0 z-50 w-full p-4">
       {/* Floating pill navbar */}
-      <nav className="navbar-glass container mx-auto rounded-2xl px-6">
+      <nav className="container mx-auto rounded-2xl px-6 bg-white/70 dark:bg-black/50 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-black/20">
         <div className="flex h-14 items-center justify-between">
           <Link href="/" className="logo-text text-2xl md:text-3xl">
             <span className="text-foreground/60">Isaac</span>{' '}
