@@ -1,6 +1,16 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+/* Yavome font for logo */
+@font-face {
+  font-family: 'Yavome';
+  src: url('/fonts/Yavome.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  opacity: 0.7;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -11,9 +21,9 @@
   --font-display: 'Space Grotesk', var(--font-geist-sans);
   --font-data: 'JetBrains Mono', var(--font-geist-mono);
   /* Digital Cobalt palette */
-  --color-cobalt: #2E5BFF;
-  --color-cobalt-hover: #4D6CFA;
-  --color-cobalt-deep: #1E40AF;
+  --color-cobalt: #2e5bff;
+  --color-cobalt-hover: #4d6cfa;
+  --color-cobalt-deep: #1e40af;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -146,9 +156,49 @@
   letter-spacing: 0.05em;
 }
 
-/* Logo style - Spotify-inspired geometric sans */
+/* Logo style - Space Grotesk to match headings */
 .logo-text {
-  font-family: 'Montserrat', var(--font-geist-sans), sans-serif;
-  font-weight: 800;
+  font-family: 'Space Grotesk', var(--font-geist-sans), sans-serif;
+  font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+/* Gradient text for logo */
+.logo-gradient {
+  background: linear-gradient(135deg, #2e5bff 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.logo-gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #2e5bff 0%, #a855f7 50%, #ec4899 100%);
+  filter: blur(20px);
+  opacity: 0.4;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+/* Floating navbar - liquid glass effect */
+.navbar-glass {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.dark .navbar-glass {
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
