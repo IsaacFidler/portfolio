@@ -1,9 +1,14 @@
-import { FadeIn, StaggerChildren } from '@/components/animations';
-import { Footer } from '@/components/layout';
-import { Navbar } from '@/components/layout';
-import { ProjectCard } from '@/components/sections';
+import { AsciiLayout } from '@/components/layout/ascii-layout';
+import {
+  AsciiList,
+  Divider,
+  Panel,
+  TextLink,
+} from '@/components/ui/ascii-primitives';
 import { personalProjects, professionalProjects } from '@/data/projects';
 import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Projects - Isaac Fidler',
@@ -13,88 +18,68 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <main>
-        {/* Hero Section */}
-        <section className="py-20 md:py-24">
-          <div className="container mx-auto px-4">
-            <FadeIn>
-              <h1 className="text-4xl md:text-5xl heading-display mb-4">Projects</h1>
-              <p className="text-xl text-muted-foreground max-w-2xl">
-                A collection of full-stack applications spanning enterprise
-                development and personal projects. From production systems
-                to creative tools.
-              </p>
-            </FadeIn>
-          </div>
-        </section>
+    <AsciiLayout title="Projects">
+      <p>
+        A collection of full-stack applications spanning enterprise development
+        and personal projects. From production systems to creative tools.
+      </p>
 
-        {/* Professional Projects - shown first */}
-        <section className="py-16 bg-muted/50">
-          <div className="container mx-auto px-4">
-            <FadeIn>
-              <div className="mb-12">
-                <h2 className="text-2xl md:text-3xl heading-display mb-4">
-                  Professional Work
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl">
-                  Enterprise applications built during my time at BX, a
-                  sustainable agriculture startup.
-                </p>
-              </div>
-            </FadeIn>
+      <Divider />
 
-            <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {professionalProjects.map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  title={project.title}
-                  description={project.description}
-                  technologies={project.technologies}
-                  liveUrl={project.liveUrl}
-                  icon={project.icon}
-                  compact
-                />
-              ))}
-            </StaggerChildren>
-          </div>
-        </section>
+      <h2>Professional Work</h2>
+      <p>
+        Enterprise applications built during my time at BX, a sustainable
+        agriculture startup.
+      </p>
 
-        {/* Personal Projects */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <FadeIn>
-              <div className="mb-12">
-                <h2 className="text-2xl md:text-3xl heading-display mb-4">
-                  Personal Projects
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl">
-                  Side projects exploring different ideas and technologies,
-                  with a focus on creative tools for musicians.
-                </p>
-              </div>
-            </FadeIn>
+      <div style={{ display: 'grid', gap: 16 }}>
+        {professionalProjects.map((project) => (
+          <Panel key={project.title} border="dotted" header={`${project.icon} ${project.title}`}>
+            <p>{project.description}</p>
+            <AsciiList
+              items={project.technologies.map((technology) => ({
+                prefix: '[*]',
+                content: technology,
+              }))}
+            />
+          </Panel>
+        ))}
+      </div>
 
-            <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {personalProjects.map((project, index) => (
-                <ProjectCard
-                  key={index}
-                  title={project.title}
-                  description={project.description}
-                  technologies={project.technologies}
-                  githubUrl={project.githubUrl}
-                  status={project.status}
-                  icon={project.icon}
-                  gradient={project.gradient}
-                  screenshot={project.screenshot}
-                />
-              ))}
-            </StaggerChildren>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+      <Divider />
+
+      <h2>Personal Projects</h2>
+      <p>
+        Side projects exploring different ideas and technologies, with a focus
+        on creative tools for musicians.
+      </p>
+
+      <div style={{ display: 'grid', gap: 16 }}>
+        {personalProjects.map((project) => (
+          <Panel key={project.title} border="solid" header={`${project.icon} ${project.title}`}>
+            {project.screenshot ? (
+              <Image
+                src={project.screenshot}
+                alt={`${project.title} screenshot`}
+                width={800}
+                height={420}
+                style={{ width: '100%', height: 'auto', border: '1px dotted var(--ascii-border)' }}
+              />
+            ) : null}
+            <p>{project.description}</p>
+            <p>Status: {project.status}</p>
+            <AsciiList
+              items={project.technologies.map((technology) => ({
+                prefix: '→',
+                content: technology,
+              }))}
+            />
+            <Link href={project.githubUrl} target="_blank" rel="noreferrer noopener">
+              <TextLink>Source Code</TextLink>
+            </Link>
+          </Panel>
+        ))}
+      </div>
+    </AsciiLayout>
   );
 }
