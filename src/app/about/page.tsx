@@ -171,14 +171,7 @@ export default function AboutPage() {
                 />
               )
             )}
-            <button
-              type="submit"
-              style={{
-                background: '#161412', color: '#f4f0e8', border: 'none',
-                fontFamily: 'inherit', fontSize: 12, padding: '10px 16px',
-                cursor: 'pointer', letterSpacing: 0.5, alignSelf: 'start',
-              }}
-            >
+            <button type="submit" className="btn-primary" style={{ fontSize: 12, alignSelf: 'start' }}>
               SEND MESSAGE ▊
             </button>
           </form>

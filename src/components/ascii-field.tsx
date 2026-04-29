@@ -83,7 +83,7 @@ export function AsciiPortrait({ cols = 60, rows = 38, fontSize = 10 }: AsciiPort
         lineHeight: 1,
         margin: 0,
         whiteSpace: 'pre',
-        color: '#161412',
+        color: 'var(--fg)',
         userSelect: 'none',
         display: 'block',
       }}

@@ -46,21 +46,11 @@ export default function HomePage() {
           </div>
 
           <div style={{ marginTop: 28, display: 'flex', gap: 16, alignItems: 'center', fontSize: 12, flexWrap: 'wrap' }}>
-            <a
-              href="/projects"
-              style={{
-                color: '#f4f0e8', background: '#161412', textDecoration: 'none',
-                padding: '10px 16px', display: 'inline-flex', alignItems: 'center',
-                gap: 8, letterSpacing: 0.5,
-              }}
-            >
+            <a href="/projects" className="btn-primary">
               VIEW WORK{' '}
               <span style={{ color: ACCENT, animation: 'blink 1.06s step-end infinite' }}>▊</span>
             </a>
-            <a
-              href="mailto:zac.fidler2@gmail.com"
-              style={{ color: '#161412', textDecoration: 'none', padding: '10px 0', borderBottom: '1px solid currentColor' }}
-            >
+            <a href="mailto:zac.fidler2@gmail.com" className="btn-secondary">
               ↳ zac.fidler2@gmail.com
             </a>
           </div>
@@ -69,9 +59,9 @@ export default function HomePage() {
         {/* ASCII dither portrait — hidden on tablet/mobile via CSS */}
         <div className="hero-portrait">
           <AsciiPortrait cols={60} rows={38} fontSize={10} />
-          <div style={{
+          <div className="dither-label" style={{
             position: 'absolute', top: 8, left: 10, fontSize: 9, opacity: 0.55,
-            letterSpacing: 1, padding: '2px 6px', background: 'rgba(244,240,232,0.85)',
+            letterSpacing: 1, padding: '2px 6px',
           }}>
             DITHER · SRC: PORTRAIT_00
           </div>
@@ -97,16 +87,11 @@ export default function HomePage() {
             return (
               <div
                 key={p.num}
+                className="project-card"
+                data-focused={focused}
                 onMouseEnter={() => setFocusCard(p.num)}
                 onMouseLeave={() => setFocusCard(null)}
-                style={{
-                  padding: '14px 16px',
-                  background: focused ? '#161412' : 'transparent',
-                  color: focused ? '#f4f0e8' : 'inherit',
-                  transition: 'background 0.12s, color 0.12s',
-                  cursor: 'pointer',
-                  position: 'relative',
-                }}
+                style={{ padding: '14px 16px' }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10, opacity: 0.6, letterSpacing: 1 }}>
                   <span>PROJ.{p.num}</span>

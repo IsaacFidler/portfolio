@@ -8,6 +8,24 @@
   --border-dashed: rgba(22, 20, 18, 0.18);
   --accent: #FF5B22;
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  /* Invert palette — used for card hover + buttons */
+  --invert-bg: #161412;
+  --invert-fg: #f4f0e8;
+  --overlay-bg: rgba(244, 240, 232, 0.85);
+  --tag-border-focused: rgba(244, 240, 232, 0.25);
+}
+
+[data-theme='dark'] {
+  --bg: #161412;
+  --fg: #f4f0e8;
+  --muted: rgba(244, 240, 232, 0.55);
+  --border: rgba(244, 240, 232, 0.18);
+  --border-dashed: rgba(244, 240, 232, 0.18);
+  --accent: #FF5B22;
+  --invert-bg: #f4f0e8;
+  --invert-fg: #161412;
+  --overlay-bg: rgba(22, 20, 18, 0.85);
+  --tag-border-focused: rgba(22, 20, 18, 0.25);
 }
 
 html,
@@ -90,6 +108,73 @@ a {
   .mobile-nav {
     display: flex;
   }
+}
+
+/* ─── Theme-aware component classes ─────────────────────────────────── */
+
+/* Project cards — hover inverts bg/fg using CSS vars */
+.project-card {
+  transition: background 0.12s, color 0.12s;
+  cursor: pointer;
+  position: 'relative';
+}
+
+.project-card[data-focused='true'] {
+  background: var(--invert-bg);
+  color: var(--invert-fg);
+}
+
+.project-card[data-focused='true'] .tech-tag {
+  border-color: var(--tag-border-focused);
+}
+
+/* Primary button — inverted bg/fg */
+.btn-primary {
+  color: var(--bg);
+  background: var(--fg);
+  border: none;
+  font-family: inherit;
+  padding: 10px 16px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+/* Secondary link button */
+.btn-secondary {
+  color: var(--fg);
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--fg);
+}
+
+/* Dither label overlay */
+.dither-label {
+  background: var(--overlay-bg);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 10px;
+  opacity: 0.5;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+}
+
+.theme-toggle:hover {
+  opacity: 0.9;
 }
 
 /* ─── Responsive layout classes ─────────────────────────────────────── */

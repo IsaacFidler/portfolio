@@ -6,6 +6,12 @@ import { useState } from 'react';
 
 const ACCENT = '#FF5B22';
 
+const cardBase = {
+  padding: '18px 20px',
+  borderBottom: '1px dashed var(--border-dashed)',
+  borderRight: '1px dashed var(--border-dashed)',
+};
+
 export default function ProjectsPage() {
   const [focusPro, setFocusPro] = useState<string | null>(null);
   const [focusPersonal, setFocusPersonal] = useState<string | null>(null);
@@ -32,7 +38,6 @@ export default function ProjectsPage() {
         </p>
       </div>
 
-      {/* Divider */}
       <div style={{ borderTop: '1px dashed var(--border-dashed)', opacity: 0.5, marginBottom: 28 }} />
 
       {/* Professional Work */}
@@ -46,17 +51,11 @@ export default function ProjectsPage() {
             return (
               <div
                 key={p.title}
+                className="project-card"
+                data-focused={focused}
                 onMouseEnter={() => setFocusPro(p.title)}
                 onMouseLeave={() => setFocusPro(null)}
-                style={{
-                  padding: '18px 20px',
-                  background: focused ? '#161412' : 'transparent',
-                  color: focused ? '#f4f0e8' : 'inherit',
-                  transition: 'background 0.12s, color 0.12s',
-                  borderBottom: '1px dashed var(--border-dashed)',
-                  borderRight: '1px dashed var(--border-dashed)',
-                  position: 'relative',
-                }}
+                style={cardBase}
               >
                 <div style={{ fontSize: 18, fontWeight: 500, letterSpacing: -0.5, marginBottom: 8 }}>
                   <ScrambleText active={focused}>{p.title}</ScrambleText>
@@ -66,14 +65,7 @@ export default function ProjectsPage() {
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, fontSize: 10, letterSpacing: 0.5 }}>
                   {p.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      style={{
-                        opacity: 0.7,
-                        border: focused ? '1px solid rgba(244,240,232,0.25)' : '1px solid var(--border)',
-                        padding: '2px 6px',
-                      }}
-                    >
+                    <span key={tech} className="tech-tag" style={{ opacity: 0.7, border: '1px solid var(--border)', padding: '2px 6px' }}>
                       {tech}
                     </span>
                   ))}
@@ -84,7 +76,6 @@ export default function ProjectsPage() {
         </div>
       </div>
 
-      {/* Divider */}
       <div style={{ borderTop: '1px dashed var(--border-dashed)', opacity: 0.5, marginBottom: 28 }} />
 
       {/* Personal Projects */}
@@ -98,29 +89,15 @@ export default function ProjectsPage() {
             return (
               <div
                 key={p.title}
+                className="project-card"
+                data-focused={focused}
                 onMouseEnter={() => setFocusPersonal(p.title)}
                 onMouseLeave={() => setFocusPersonal(null)}
-                style={{
-                  padding: '18px 20px',
-                  background: focused ? '#161412' : 'transparent',
-                  color: focused ? '#f4f0e8' : 'inherit',
-                  transition: 'background 0.12s, color 0.12s',
-                  borderBottom: '1px dashed var(--border-dashed)',
-                  borderRight: '1px dashed var(--border-dashed)',
-                  position: 'relative',
-                }}
+                style={cardBase}
               >
-                <div style={{
-                  display: 'flex', justifyContent: 'space-between',
-                  fontSize: 10, opacity: 0.55, letterSpacing: 1, marginBottom: 6,
-                }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 10, opacity: 0.55, letterSpacing: 1, marginBottom: 6 }}>
                   <span>{p.status.toUpperCase()}</span>
-                  <a
-                    href={p.githubUrl}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    style={{ opacity: 0.7, color: focused ? '#f4f0e8' : 'inherit' }}
-                  >
+                  <a href={p.githubUrl} target="_blank" rel="noreferrer noopener" style={{ opacity: 0.7, color: 'inherit' }}>
                     gh ↗
                   </a>
                 </div>
@@ -132,22 +109,13 @@ export default function ProjectsPage() {
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, fontSize: 10 }}>
                   {p.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      style={{
-                        opacity: 0.7,
-                        border: focused ? '1px solid rgba(244,240,232,0.25)' : '1px solid var(--border)',
-                        padding: '2px 6px',
-                      }}
-                    >
+                    <span key={tech} className="tech-tag" style={{ opacity: 0.7, border: '1px solid var(--border)', padding: '2px 6px' }}>
                       {tech}
                     </span>
                   ))}
                 </div>
                 {focused && (
-                  <div style={{ position: 'absolute', top: 14, right: 16, color: ACCENT, fontSize: 14 }}>
-                    ◆
-                  </div>
+                  <div style={{ position: 'absolute', top: 14, right: 16, color: ACCENT, fontSize: 14 }}>◆</div>
                 )}
               </div>
             );

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 const ACCENT = '#FF5B22';
 
@@ -167,7 +168,8 @@ export function Sidebar() {
         />
         available · q3 &apos;26
       </div>
-      <div style={{ fontSize: 10, opacity: 0.4, marginTop: 4 }}>── © mmxxvi ──</div>
+      <ThemeToggle />
+      <div style={{ fontSize: 10, opacity: 0.4, marginTop: 6 }}>── © mmxxvi ──</div>
     </aside>
   );
 }
