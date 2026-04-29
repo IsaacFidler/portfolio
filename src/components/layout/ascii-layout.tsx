@@ -8,6 +8,7 @@ import {
   Panel,
   TextLink,
 } from '@/components/ui/ascii-primitives';
+import { AsciiField } from '@/components/ascii-field';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ReactNode, useState } from 'react';
@@ -49,9 +50,16 @@ export function AsciiLayout({
 
   return (
     <GridShell
+      backdrop={<AsciiField />}
       sidebar={
         <>
           {navList}
+          <Divider />
+          <Panel border="dotted" header="Version">
+            <Link href="/classic">
+              <TextLink>Show old site version</TextLink>
+            </Link>
+          </Panel>
           <Divider />
           <Panel border="solid">
             <p>[*] Isaac Fidler</p>
@@ -88,7 +96,14 @@ export function AsciiLayout({
       }
       mobileMenu={
         menuOpen ? (
-          <div id="mobile-nav">{navList}</div>
+          <div id="mobile-nav">
+            {navList}
+            <div style={{ marginTop: 8 }}>
+              <Link href="/classic">
+                <TextLink>Show old site version</TextLink>
+              </Link>
+            </div>
+          </div>
         ) : undefined
       }
       main={

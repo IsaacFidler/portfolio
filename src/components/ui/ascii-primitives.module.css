@@ -1,3 +1,71 @@
+.asciiRoot {
+  --ascii-bg: #f2efe7;
+  --ascii-text: #1f1f1b;
+  --ascii-muted: #5b5a52;
+  --ascii-border: #8a887d;
+  --ascii-hover: #e7e3da;
+  --ascii-focus: #3a3a34;
+  --ascii-font: 'JetBrains Mono', 'IBM Plex Mono', 'SFMono-Regular', Menlo,
+    Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  min-height: 100vh;
+  background: var(--ascii-bg);
+  color: var(--ascii-text);
+  font-family: var(--ascii-font);
+  line-height: 1.5;
+}
+
+.asciiRoot h1,
+.asciiRoot h2,
+.asciiRoot h3,
+.asciiRoot h4,
+.asciiRoot h5,
+.asciiRoot h6 {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+}
+
+.asciiRoot p,
+.asciiRoot li {
+  max-width: 75ch;
+}
+
+.asciiRoot a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+.asciiRoot a:hover {
+  background: var(--ascii-hover);
+}
+
+.asciiRoot ::selection {
+  background: var(--ascii-text);
+  color: var(--ascii-bg);
+}
+
+.asciiRoot :focus-visible {
+  outline: 2px solid var(--ascii-focus);
+  outline-offset: 2px;
+}
+
+.asciiRoot input,
+.asciiRoot textarea {
+  width: 100%;
+  border: 1px dotted var(--ascii-border);
+  background: transparent;
+  color: var(--ascii-text);
+  font: inherit;
+  padding: 10px 12px;
+}
+
+.asciiRoot input:hover,
+.asciiRoot textarea:hover {
+  background: var(--ascii-hover);
+}
+
 .panel {
   border: var(--ascii-border-style, 1px dotted var(--ascii-border));
   padding: var(--panel-padding, 16px);
@@ -82,6 +150,8 @@
   gap: 16px;
   grid-template-columns: 1fr;
   padding: 16px 0 32px;
+  position: relative;
+  z-index: 1;
 }
 
 .sidebar {

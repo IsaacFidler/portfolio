@@ -1,21 +1,27 @@
-import '@fontsource/jetbrains-mono/400.css';
 import type { Metadata } from 'next';
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/500.css';
+import '@fontsource/jetbrains-mono/700.css';
 import './globals.css';
+import { Sidebar } from '@/components/layout/sidebar';
+import { MobileNav } from '@/components/layout/mobile-nav';
 
 export const metadata: Metadata = {
-  title: 'Isaac Fidler - Full-Stack Developer',
+  title: 'Isaac Fidler — Full-Stack Developer',
   description:
-    'Full-stack developer specializing in React, Next.js, TypeScript, and Node.js. Building scalable web applications with clean code and great UX.',
+    'Full-stack developer building scalable web apps with TypeScript, React, and Node.js. 5 years experience, based in London.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <MobileNav />
+        <div className="layout-shell">
+          <Sidebar />
+          <main className="layout-main">{children}</main>
+        </div>
+      </body>
     </html>
   );
 }

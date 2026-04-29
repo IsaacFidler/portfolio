@@ -7,21 +7,22 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const navLinks = [
-  { href: '/', label: 'Home', icon: Home },
-  { href: '/projects', label: 'Projects', icon: FolderKanban },
-  { href: '/about', label: 'About', icon: User },
+  { path: '/', label: 'Home', icon: Home },
+  { path: '/projects', label: 'Projects', icon: FolderKanban },
+  { path: '/about', label: 'About', icon: User },
 ];
 
-export function Navbar() {
+export function Navbar({ basePath = '' }: { basePath?: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const getHref = (path: string) => (path === '/' ? basePath || '/' : `${basePath}${path}`);
 
   return (
     <div className="sticky top-0 z-50 w-full p-4">
       {/* Floating pill navbar */}
       <nav className="container mx-auto rounded-2xl px-6 bg-white/70 dark:bg-black/50 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-black/20">
         <div className="flex h-14 items-center justify-between">
-          <Link href="/" className="logo-text text-2xl md:text-3xl">
+          <Link href={getHref('/')} className="logo-text text-2xl md:text-3xl">
             <span className="text-foreground/60">Isaac</span>{' '}
             <span className="logo-gradient">Fidler</span>
           </Link>
@@ -30,11 +31,12 @@ export function Navbar() {
           <div className="hidden md:flex items-center space-x-2">
             {navLinks.map((link) => {
               const Icon = link.icon;
-              const isActive = pathname === link.href;
+              const href = getHref(link.path);
+              const isActive = pathname === href;
               return (
                 <Link
-                  key={link.href}
-                  href={link.href}
+                  key={href}
+                  href={href}
                   className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                     isActive
                       ? 'bg-primary/15 text-primary shadow-sm shadow-primary/20'
@@ -72,11 +74,12 @@ export function Navbar() {
           <div className="md:hidden py-4 space-y-2 border-t border-border/30">
             {navLinks.map((link) => {
               const Icon = link.icon;
-              const isActive = pathname === link.href;
+              const href = getHref(link.path);
+              const isActive = pathname === href;
               return (
                 <Link
-                  key={link.href}
-                  href={link.href}
+                  key={href}
+                  href={href}
                   onClick={() => setIsMenuOpen(false)}
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all ${
                     isActive
