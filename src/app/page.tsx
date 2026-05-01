@@ -29,12 +29,12 @@ export default function HomePage() {
           </div>
 
           <h1 className="hero-h1">
-            <div>I build</div>
+            <div>Full-stack</div>
             <div>
-              software{' '}
-              <span style={{ color: ACCENT, fontStyle: 'italic' }}>for</span>
+              <span style={{ color: ACCENT, fontStyle: 'italic' }}>&amp;</span>{' '}
+              music
             </div>
-            <div className="hero-sub">the people who use it.</div>
+            <div className="hero-sub">developer. London.</div>
           </h1>
 
           <div style={{ marginTop: 32, fontSize: 13, lineHeight: 1.55, maxWidth: 440, opacity: 0.8 }}>
