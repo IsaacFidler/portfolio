@@ -79,7 +79,7 @@ export function AsciiPortrait({ cols = 60, rows = 38, fontSize = 10 }: AsciiPort
     lastRef.current = performance.now();
 
     const loop = (now: number) => {
-      setT((prev) => prev + (now - lastRef.current) * 0.001);
+      setT((prev) => prev + (now - lastRef.current) * 0.0022);
       lastRef.current = now;
       rafId = requestAnimationFrame(loop);
     };
