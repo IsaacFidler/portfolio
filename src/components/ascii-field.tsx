@@ -17,6 +17,8 @@ function generatePortrait(cols: number, rows: number, t: number): string {
     for (let x = 0; x < cols; x++) {
       const nx = (x / cols) * 2 - 1;
       const ny = (y / rows) * 2 - 1;
+
+      // Portrait silhouette (head + shoulders)
       const headR = Math.sqrt(nx * nx * 2.2 + (ny + 0.2) * (ny + 0.2) * 2.5);
       const shoulders = Math.max(
         0,
@@ -24,13 +26,26 @@ function generatePortrait(cols: number, rows: number, t: number): string {
       );
       const head = Math.max(0, 1 - headR);
       const mass = Math.max(head, shoulders);
-      const noise = 0.1 * Math.sin(x * 0.3 + y * 0.5 + t);
-      let v =
-        mass > 0
-          ? 0.3 + mass * 0.6 + noise
-          : 0.08 + 0.05 * Math.sin(x * 0.2 + y * 0.3);
+
+      // Multi-layer diagonal waves at distinct speeds & angles
+      const w1 = Math.sin(x * 0.38 + y * 0.55 + t * 2.2) * 0.18;
+      const w2 = Math.sin(x * 0.62 - y * 0.30 + t * 1.5) * 0.13;
+      const w3 = Math.sin(x * 0.20 + y * 0.78 - t * 1.0) * 0.11;
+      const w4 = Math.cos(x * 0.48 + y * 0.42 + t * 1.8) * 0.09;
+      const wave = w1 + w2 + w3 + w4;
+
+      let v: number;
+      if (mass > 0) {
+        // Waves ripple through the portrait's density
+        v = 0.3 + mass * 0.6 + wave;
+      } else {
+        // Animated background field (uses absolute wave so it never goes flat)
+        v = 0.05 + Math.abs(wave) * 0.55;
+      }
+
+      // Bayer ordered dithering
       const threshold = BAYER[y % 4][x % 4] / 16 - 0.5;
-      v = Math.max(0, Math.min(1, v + threshold * 0.08));
+      v = Math.max(0, Math.min(1, v + threshold * 0.12));
       out += RAMP[Math.round(v * L)];
     }
     if (y < rows - 1) out += '\n';
@@ -64,7 +79,7 @@ export function AsciiPortrait({ cols = 60, rows = 38, fontSize = 10 }: AsciiPort
     lastRef.current = performance.now();
 
     const loop = (now: number) => {
-      setT((prev) => prev + (now - lastRef.current) * 0.004 * 0.01);
+      setT((prev) => prev + (now - lastRef.current) * 0.001);
       lastRef.current = now;
       rafId = requestAnimationFrame(loop);
     };
