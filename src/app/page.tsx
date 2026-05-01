@@ -42,7 +42,7 @@ export default function HomePage() {
             <span style={{ color: ACCENT }}>TypeScript</span>,{' '}
             <span style={{ color: ACCENT }}>React</span>,{' '}
             <span style={{ color: ACCENT }}>Node.js</span>. I build tools,
-            platforms, and APIs that don&apos;t waste your time.
+            platforms, and APIs that hold up.
           </div>
 
           <div style={{ marginTop: 28, display: 'flex', gap: 16, alignItems: 'center', fontSize: 12, flexWrap: 'wrap' }}>

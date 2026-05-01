@@ -33,8 +33,7 @@ export default function ProjectsPage() {
         </h1>
         <p style={{ marginTop: 20, fontSize: 13, lineHeight: 1.55, maxWidth: 520, opacity: 0.7 }}>
           Five years of full-stack engineering across sustainability tech, creative
-          tools, and developer infrastructure. Below is a mix of production systems
-          and personal projects.
+          tools, and developer infrastructure.
         </p>
       </div>
 

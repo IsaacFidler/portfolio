@@ -20,29 +20,28 @@ export default function AboutPage() {
         <h1 className="hero-h1">
           <div>Full-stack</div>
           <div>
-            developer{' '}
-            <span style={{ color: ACCENT, fontStyle: 'italic' }}>&amp;</span>
+            <span style={{ color: ACCENT, fontStyle: 'italic' }}>&amp;</span>{' '}
+            music
           </div>
-          <div className="hero-sub">problem solver.</div>
+          <div className="hero-sub">developer. London.</div>
         </h1>
       </div>
 
       {/* Bio */}
       <div className="about-bio-grid">
         <p style={{ margin: 0 }}>
-          My path into software started at Goldsmiths, University of London,
-          where I studied Music Computing — a degree that combined my love for
-          music production with programming and creative technology. I built
-          audio visualisers, sequencers, and experimental instruments while
-          developing a solid foundation in computer science.
+          Started at Goldsmiths studying Music Computing — programming, audio,
+          and creative technology. Built audio visualisers, sequencers, and
+          experimental instruments before moving into professional software
+          engineering.
         </p>
         <p style={{ margin: 0 }}>
           After CodeWorks bootcamp I joined BX as a software engineer, spending
           four years building web applications for sustainable agriculture. I led
           production apps, built a company-wide component library, established
           CI/CD pipelines, and helped grow the engineering team from 2 to 11.
-          Now I&apos;m building across different domains, equally excited by
-          technically challenging problems that let me ship quality software.
+          Now working across different domains — most interested in technically
+          complex problems with real-world impact.
         </p>
       </div>
 
