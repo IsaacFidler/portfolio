@@ -47,6 +47,8 @@ export default function AboutPage() {
           four years building web applications for sustainable agriculture. I
           led production apps, built a company-wide component library,
           established CI/CD pipelines, and helped grow the engineering team.
+          Now working as a Senior Front End Engineer at a London-based data
+          services company.
         </p>
       </div>
 
