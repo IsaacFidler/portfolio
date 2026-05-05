@@ -125,7 +125,7 @@ export function Sidebar() {
                   </span>
                   <span
                     style={{
-                      textDecoration: active || hover ? 'underline' : 'none',
+                      textDecorationLine: active || hover ? 'underline' : 'none',
                       textUnderlineOffset: 3,
                       textDecorationColor: ACCENT,
                       fontWeight: active ? 500 : 400,
