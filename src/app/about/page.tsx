@@ -14,7 +14,14 @@ export default function AboutPage() {
     <div className="page-content">
       {/* Header */}
       <div style={{ marginBottom: 40 }}>
-        <div style={{ fontSize: 10, letterSpacing: 1.4, opacity: 0.55, marginBottom: 18 }}>
+        <div
+          style={{
+            fontSize: 10,
+            letterSpacing: 1.4,
+            opacity: 0.55,
+            marginBottom: 18,
+          }}
+        >
           ──── ABOUT · ISAAC FIDLER ────
         </div>
         <h1 className="hero-h1">
@@ -37,20 +44,33 @@ export default function AboutPage() {
         </p>
         <p style={{ margin: 0 }}>
           After CodeWorks bootcamp I joined BX as a software engineer, spending
-          four years building web applications for sustainable agriculture. I led
-          production apps, built a company-wide component library, established
-          CI/CD pipelines, and helped grow the engineering team from 2 to 11.
-          Now working across different domains — most interested in technically
+          four years building web applications for sustainable agriculture. I
+          led production apps, built a company-wide component library,
+          established CI/CD pipelines, and helped grow the engineering team. Now
+          working across different domains — most interested in technically
           complex problems with real-world impact.
         </p>
       </div>
 
       {/* Divider */}
-      <div style={{ borderTop: '1px dashed var(--border-dashed)', opacity: 0.5, marginBottom: 28 }} />
+      <div
+        style={{
+          borderTop: '1px dashed var(--border-dashed)',
+          opacity: 0.5,
+          marginBottom: 28,
+        }}
+      />
 
       {/* Experience */}
       <div style={{ marginBottom: 48 }}>
-        <div style={{ fontSize: 10, opacity: 0.5, letterSpacing: 1.2, marginBottom: 20 }}>
+        <div
+          style={{
+            fontSize: 10,
+            opacity: 0.5,
+            letterSpacing: 1.2,
+            marginBottom: 20,
+          }}
+        >
           /EXPERIENCE ————
         </div>
         <div>
@@ -60,16 +80,43 @@ export default function AboutPage() {
               className="experience-row"
               style={{
                 padding: '18px 0',
-                borderBottom: i < experience.length - 1 ? '1px dashed var(--border-dashed)' : 'none',
+                borderBottom:
+                  i < experience.length - 1
+                    ? '1px dashed var(--border-dashed)'
+                    : 'none',
               }}
             >
               <div>
-                <div style={{ fontSize: 10, opacity: 0.55, letterSpacing: 0.5 }}>{entry.period}</div>
-                <div style={{ fontSize: 12, fontWeight: 500, marginTop: 4, color: ACCENT }}>{entry.company}</div>
+                <div
+                  style={{ fontSize: 10, opacity: 0.55, letterSpacing: 0.5 }}
+                >
+                  {entry.period}
+                </div>
+                <div
+                  style={{
+                    fontSize: 12,
+                    fontWeight: 500,
+                    marginTop: 4,
+                    color: ACCENT,
+                  }}
+                >
+                  {entry.company}
+                </div>
               </div>
               <div>
-                <div style={{ fontSize: 14, fontWeight: 500, marginBottom: 6 }}>{entry.title}</div>
-                <p style={{ fontSize: 12, lineHeight: 1.6, opacity: 0.7, margin: 0 }}>{entry.description}</p>
+                <div style={{ fontSize: 14, fontWeight: 500, marginBottom: 6 }}>
+                  {entry.title}
+                </div>
+                <p
+                  style={{
+                    fontSize: 12,
+                    lineHeight: 1.6,
+                    opacity: 0.7,
+                    margin: 0,
+                  }}
+                >
+                  {entry.description}
+                </p>
               </div>
             </div>
           ))}
@@ -77,18 +124,37 @@ export default function AboutPage() {
       </div>
 
       {/* Divider */}
-      <div style={{ borderTop: '1px dashed var(--border-dashed)', opacity: 0.5, marginBottom: 28 }} />
+      <div
+        style={{
+          borderTop: '1px dashed var(--border-dashed)',
+          opacity: 0.5,
+          marginBottom: 28,
+        }}
+      />
 
       {/* Skills */}
       <div style={{ marginBottom: 48 }}>
-        <div style={{ fontSize: 10, opacity: 0.5, letterSpacing: 1.2, marginBottom: 16 }}>
+        <div
+          style={{
+            fontSize: 10,
+            opacity: 0.5,
+            letterSpacing: 1.2,
+            marginBottom: 16,
+          }}
+        >
           /SKILLS ————
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           {skills.map((skill) => (
             <span
               key={skill}
-              style={{ fontSize: 11, border: '1px solid var(--border)', padding: '4px 10px', opacity: 0.75, letterSpacing: 0.3 }}
+              style={{
+                fontSize: 11,
+                border: '1px solid var(--border)',
+                padding: '4px 10px',
+                opacity: 0.75,
+                letterSpacing: 0.3,
+              }}
             >
               {skill}
             </span>
@@ -97,38 +163,78 @@ export default function AboutPage() {
       </div>
 
       {/* Divider */}
-      <div style={{ borderTop: '1px dashed var(--border-dashed)', opacity: 0.5, marginBottom: 28 }} />
+      <div
+        style={{
+          borderTop: '1px dashed var(--border-dashed)',
+          opacity: 0.5,
+          marginBottom: 28,
+        }}
+      />
 
       {/* Contact */}
       <div>
-        <div style={{ fontSize: 10, opacity: 0.5, letterSpacing: 1.2, marginBottom: 20 }}>
+        <div
+          style={{
+            fontSize: 10,
+            opacity: 0.5,
+            letterSpacing: 1.2,
+            marginBottom: 20,
+          }}
+        >
           /GET IN TOUCH ————
         </div>
         <div className="about-contact-grid">
           {/* Contact info */}
           <div>
-            <p style={{ fontSize: 13, lineHeight: 1.6, opacity: 0.75, margin: '0 0 20px' }}>
-              Available for freelance projects and full-time roles. If you have
-              something interesting, let&apos;s talk.
+            <p
+              style={{
+                fontSize: 13,
+                lineHeight: 1.6,
+                opacity: 0.75,
+                margin: '0 0 20px',
+              }}
+            >
+              Always happy to hear about interesting projects or ideas.
+              Drop me a message.
             </p>
             <div style={{ display: 'grid', gap: 8, fontSize: 12 }}>
               <div>
                 <span style={{ opacity: 0.45, marginRight: 8 }}>├─</span>
-                <a href="mailto:zac.fidler2@gmail.com" style={{ borderBottom: '1px solid var(--border)', paddingBottom: 1 }}>
+                <a
+                  href="mailto:zac.fidler2@gmail.com"
+                  style={{
+                    borderBottom: '1px solid var(--border)',
+                    paddingBottom: 1,
+                  }}
+                >
                   zac.fidler2@gmail.com
                 </a>
               </div>
               <div>
                 <span style={{ opacity: 0.45, marginRight: 8 }}>├─</span>
-                <a href="https://github.com/IsaacFidler" target="_blank" rel="noreferrer noopener"
-                  style={{ borderBottom: '1px solid var(--border)', paddingBottom: 1 }}>
+                <a
+                  href="https://github.com/IsaacFidler"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  style={{
+                    borderBottom: '1px solid var(--border)',
+                    paddingBottom: 1,
+                  }}
+                >
                   github.com/IsaacFidler ↗
                 </a>
               </div>
               <div>
                 <span style={{ opacity: 0.45, marginRight: 8 }}>└─</span>
-                <a href="https://www.linkedin.com/in/isaac-fidler/" target="_blank" rel="noreferrer noopener"
-                  style={{ borderBottom: '1px solid var(--border)', paddingBottom: 1 }}>
+                <a
+                  href="https://www.linkedin.com/in/isaac-fidler/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  style={{
+                    borderBottom: '1px solid var(--border)',
+                    paddingBottom: 1,
+                  }}
+                >
                   linkedin.com/in/isaac-fidler ↗
                 </a>
               </div>
@@ -142,7 +248,11 @@ export default function AboutPage() {
             style={{ display: 'grid', gap: 12, fontSize: 12 }}
           >
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_subject" value="New message from portfolio site" />
+            <input
+              type="hidden"
+              name="_subject"
+              value="New message from portfolio site"
+            />
             {(['name', 'email', 'message'] as const).map((field) =>
               field === 'message' ? (
                 <textarea
@@ -151,9 +261,14 @@ export default function AboutPage() {
                   placeholder={field}
                   rows={4}
                   style={{
-                    background: 'transparent', border: '1px dashed var(--border)',
-                    color: 'var(--fg)', fontFamily: 'inherit', fontSize: 12,
-                    padding: '8px 12px', resize: 'vertical', outline: 'none',
+                    background: 'transparent',
+                    border: '1px dashed var(--border)',
+                    color: 'var(--fg)',
+                    fontFamily: 'inherit',
+                    fontSize: 12,
+                    padding: '8px 12px',
+                    resize: 'vertical',
+                    outline: 'none',
                   }}
                 />
               ) : (
@@ -163,14 +278,22 @@ export default function AboutPage() {
                   name={field}
                   placeholder={field}
                   style={{
-                    background: 'transparent', border: '1px dashed var(--border)',
-                    color: 'var(--fg)', fontFamily: 'inherit', fontSize: 12,
-                    padding: '8px 12px', outline: 'none',
+                    background: 'transparent',
+                    border: '1px dashed var(--border)',
+                    color: 'var(--fg)',
+                    fontFamily: 'inherit',
+                    fontSize: 12,
+                    padding: '8px 12px',
+                    outline: 'none',
                   }}
                 />
-              )
+              ),
             )}
-            <button type="submit" className="btn-primary" style={{ fontSize: 12, alignSelf: 'start' }}>
+            <button
+              type="submit"
+              className="btn-primary"
+              style={{ fontSize: 12, alignSelf: 'start' }}
+            >
               SEND MESSAGE ▊
             </button>
           </form>

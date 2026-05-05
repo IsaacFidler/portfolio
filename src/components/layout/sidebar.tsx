@@ -147,27 +147,6 @@ export function Sidebar() {
       <div style={{ flex: 1 }} />
 
       {/* Status */}
-      <div
-        style={{
-          fontSize: 10,
-          opacity: 0.6,
-          marginTop: 18,
-          display: 'flex',
-          alignItems: 'center',
-          gap: 6,
-        }}
-      >
-        <span
-          style={{
-            width: 6,
-            height: 6,
-            background: ACCENT,
-            display: 'inline-block',
-            animation: 'pulse 1.6s infinite',
-          }}
-        />
-        available · q3 &apos;26
-      </div>
       <ThemeToggle />
       <div style={{ fontSize: 10, opacity: 0.4, marginTop: 6 }}>── © mmxxvi ──</div>
     </aside>

@@ -7,6 +7,13 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
+    title: 'Senior Front End Engineer',
+    company: 'Current role',
+    period: '2026 — present',
+    description:
+      'Senior front end engineer at a London-based data services company. Building large-scale web applications and working across a cross-functional engineering team.',
+  },
+  {
     title: 'Full-Stack Engineer',
     company: 'BX',
     period: '2022 - December 2025',
