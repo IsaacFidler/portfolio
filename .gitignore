@@ -24,6 +24,12 @@
 .DS_Store
 *.pem
 
+# claude
+.claude/
+
+# next.js build backups
+.next_backup_*/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

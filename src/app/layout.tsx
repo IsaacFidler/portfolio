@@ -1,48 +1,30 @@
-import { DotOrbit } from '@/components/dot-orbit';
-import { GrainOverlay } from '@/components/grain-overlay';
-import { ThemeProvider } from '@/components/theme-provider';
+import type { Metadata } from 'next';
 import '@fontsource/jetbrains-mono/400.css';
 import '@fontsource/jetbrains-mono/500.css';
-import '@fontsource/montserrat/800.css';
-import '@fontsource/plus-jakarta-sans/400.css';
-import '@fontsource/plus-jakarta-sans/500.css';
-import '@fontsource/plus-jakarta-sans/600.css';
-import '@fontsource/space-grotesk/700.css';
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import '@fontsource/jetbrains-mono/700.css';
 import './globals.css';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+import { Sidebar } from '@/components/layout/sidebar';
+import { MobileNav } from '@/components/layout/mobile-nav';
 
 export const metadata: Metadata = {
-  title: 'Isaac Fidler - Full-Stack Developer',
+  title: 'Isaac Fidler — Full-Stack Developer',
   description:
-    'Full-stack developer specializing in React, Next.js, TypeScript, and Node.js. Building scalable web applications with clean code and great UX.',
+    'Full-stack developer building scalable web apps with TypeScript, React, and Node.js. 5 years experience, based in London.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider defaultTheme="system">
-          <DotOrbit />
-          <GrainOverlay />
-          {children}
-        </ThemeProvider>
+      {/* Inline script prevents flash of wrong theme on load */}
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);})();` }} />
+      </head>
+      <body>
+        <MobileNav />
+        <div className="layout-shell">
+          <Sidebar />
+          <main className="layout-main">{children}</main>
+        </div>
       </body>
     </html>
   );

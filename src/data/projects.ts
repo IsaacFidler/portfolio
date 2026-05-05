@@ -44,7 +44,7 @@ export const personalProjects: PersonalProject[] = [
   {
     title: 'Beat Weaver',
     description:
-      'Web-based sampler sequencer for generating randomised drum loops from sample libraries. Enables rapid idea generation for music production workflows.',
+      'Web-based sampler sequencer for generating randomised drum loops from sample libraries. Good for sketching ideas quickly without overthinking it.',
     technologies: ['React', 'Web Audio API'],
     status: 'Personal Tool',
     githubUrl: 'https://github.com/IsaacFidler',
