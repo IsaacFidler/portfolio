@@ -46,9 +46,7 @@ export default function AboutPage() {
           After CodeWorks bootcamp I joined BX as a software engineer, spending
           four years building web applications for sustainable agriculture. I
           led production apps, built a company-wide component library,
-          established CI/CD pipelines, and helped grow the engineering team. Now
-          working across different domains — most interested in technically
-          complex problems with real-world impact.
+          established CI/CD pipelines, and helped grow the engineering team.
         </p>
       </div>
 
