@@ -46,9 +46,8 @@ export default function AboutPage() {
           After CodeWorks bootcamp I joined BX as a software engineer, spending
           four years building web applications for sustainable agriculture. I
           led production apps, built a company-wide component library,
-          established CI/CD pipelines, and helped grow the engineering team.
-          Now working as a Senior Front End Engineer at a London-based data
-          services company.
+          established CI/CD pipelines, and helped grow the engineering team. Now
+          working as a Senior Front End Engineer at a London-based company.
         </p>
       </div>
 
@@ -194,8 +193,8 @@ export default function AboutPage() {
                 margin: '0 0 20px',
               }}
             >
-              Always happy to hear about interesting projects or ideas.
-              Drop me a message.
+              Always happy to hear about interesting projects or ideas. Drop me
+              a message.
             </p>
             <div style={{ display: 'grid', gap: 8, fontSize: 12 }}>
               <div>
