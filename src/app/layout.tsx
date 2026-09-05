@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
+import '@fontsource-variable/archivo';
 import '@fontsource/jetbrains-mono/400.css';
 import '@fontsource/jetbrains-mono/500.css';
-import '@fontsource/jetbrains-mono/700.css';
 import './globals.css';
-import { Sidebar } from '@/components/layout/sidebar';
-import { MobileNav } from '@/components/layout/mobile-nav';
+import { Header } from '@/components/layout/header';
 
 export const metadata: Metadata = {
   title: 'Isaac Fidler — Full-Stack Developer',
@@ -17,14 +16,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       {/* Inline script prevents flash of wrong theme on load */}
       <head>
-        <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);})();` }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t!=='dark'&&t!=='light')t='light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();`,
+          }}
+        />
       </head>
       <body>
-        <MobileNav />
-        <div className="layout-shell">
-          <Sidebar />
-          <main className="layout-main">{children}</main>
+        <div id="grid" aria-hidden="true">
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
         </div>
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
