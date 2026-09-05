@@ -1,3 +1,50 @@
+export interface SelectedWork {
+  num: string;
+  title: string;
+  blurb: string;
+  year: string;
+}
+
+/** Curated list shown as rows on the Work page. */
+export const selectedWork: SelectedWork[] = [
+  {
+    num: '01',
+    title: 'Stems',
+    blurb: 'Music project management · Next.js / Supabase',
+    year: '25',
+  },
+  {
+    num: '02',
+    title: 'Playlist Purchase',
+    blurb: 'Spotify × vinyl pricing · TypeScript',
+    year: '25',
+  },
+  {
+    num: '03',
+    title: 'Beat Weaver',
+    blurb: 'Web sampler sequencer · React / Web Audio',
+    year: '24',
+  },
+  {
+    num: '04',
+    title: 'SaaS Platform',
+    blurb: 'Sustainability data · 60k+ acres',
+    year: '25',
+  },
+  {
+    num: '05',
+    title: 'Core API',
+    blurb: 'NestJS backend · GCP / PostgreSQL',
+    year: '24',
+  },
+  {
+    num: '06',
+    title: 'Component Library',
+    blurb: '40+ components · published to NPM',
+    year: '23',
+  },
+];
+
 export interface PersonalProject {
   title: string;
   description: string;

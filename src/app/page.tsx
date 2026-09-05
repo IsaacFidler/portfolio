@@ -1,238 +1,73 @@
 'use client';
 
-import { AsciiPortrait } from '@/components/ascii-field';
-import { ScrambleText } from '@/components/ui/scramble-text';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const ACCENT = '#FF5B22';
-
-const selectedWork = [
-  {
-    num: '01',
-    title: 'Stems',
-    blurb: 'music project management · next.js/supabase',
-    year: '25',
-  },
-  {
-    num: '02',
-    title: 'Playlist Purchase',
-    blurb: 'spotify × vinyl pricing · typescript',
-    year: '25',
-  },
-  {
-    num: '03',
-    title: 'Beat Weaver',
-    blurb: 'web sampler sequencer · react/web audio',
-    year: '24',
-  },
-  {
-    num: '04',
-    title: 'SaaS Platform',
-    blurb: 'sustainability data · 60k+ acres',
-    year: '25',
-  },
-  {
-    num: '05',
-    title: 'Core API',
-    blurb: 'nestjs backend · gcp/postgresql',
-    year: '24',
-  },
-  {
-    num: '06',
-    title: 'Component Lib',
-    blurb: '40+ components · npm published',
-    year: '23',
-  },
-];
+const WORD = 'ISAAC';
 
 export default function HomePage() {
-  const [focusCard, setFocusCard] = useState<string | null>(null);
+  const [entered, setEntered] = useState(false);
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() =>
+      requestAnimationFrame(() => setEntered(true)),
+    );
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   return (
-    <div className="hero-outer">
-      {/* Hero */}
-      <div className="hero-grid">
-        {/* Hero text */}
-        <div>
-          <div
-            style={{
-              fontSize: 10,
-              letterSpacing: 1.4,
-              opacity: 0.55,
-              marginBottom: 18,
-            }}
-          >
-            ──── PORTFOLIO · 2026 EDITION ────
-          </div>
-
-          <h1 className="hero-h1">
-            <div>Full-stack</div>
-            <div>
-              <span style={{ color: ACCENT, fontStyle: 'italic' }}>&amp;</span>{' '}
-              music
+    <section className="page" data-page="home">
+      <div className="hero">
+        <div className="hero-mid" data-mode="off">
+          <div className="hcol">
+            <p className="lede rv" style={{ ['--i' as string]: 0 }}>
+              Isaac - Senior full-stack web developer with five years building products
+              end to end. TypeScript, React, Node.js. Tools, platforms, APIs —
+              all that good stuff.
+            </p>
+            <div className="lede-meta mono rv" style={{ ['--i' as string]: 1 }}>
+              <span className="mut">Senior Frontend Engineer</span>
+              <span className="mut">London</span>
             </div>
-            <div className="hero-sub">developer. London.</div>
-          </h1>
-
-          <div
-            style={{
-              marginTop: 32,
-              fontSize: 13,
-              lineHeight: 1.55,
-              maxWidth: 440,
-              opacity: 0.8,
-            }}
-          >
-            Isaac, full-stack web developer with 5 years of experience —{' '}
-            <span style={{ color: ACCENT }}>TypeScript</span>,{' '}
-            <span style={{ color: ACCENT }}>React</span>,{' '}
-            <span style={{ color: ACCENT }}>Node.js</span>. I build tools,
-            platforms, APIs - all that good stuff.
           </div>
+        </div>
 
+        <div className="rule" />
+        <div className="mono mut" style={{ padding: '8px 0 0' }}>
+          Portfolio — selected work 2023—2026
+        </div>
+
+        <div className="wordwrap">
           <div
+            className="blk"
             style={{
-              marginTop: 28,
-              display: 'flex',
-              gap: 16,
-              alignItems: 'center',
-              fontSize: 12,
-              flexWrap: 'wrap',
+              transform: entered ? 'none' : 'scale(0,1)',
+              transition: 'transform 1.05s cubic-bezier(.16,1,.3,1) .08s',
             }}
-          >
-            <a href="/projects" className="btn-primary">
-              VIEW WORK{' '}
+          />
+          <div className="word" aria-label={WORD}>
+            {[...WORD].map((ch, i) => (
               <span
+                key={i}
+                className="ch"
+                aria-hidden="true"
                 style={{
-                  color: ACCENT,
-                  animation: 'blink 1.06s step-end infinite',
+                  transform: entered ? 'none' : 'translateY(105%)',
+                  transition: `transform 1.05s cubic-bezier(.16,1,.3,1) ${
+                    i * 0.055
+                  }s`,
                 }}
               >
-                ▊
+                {ch}
               </span>
-            </a>
-            <a href="mailto:zac.fidler2@gmail.com" className="btn-secondary">
-              ↳ zac.fidler2@gmail.com
-            </a>
-          </div>
-        </div>
-
-        {/* ASCII dither portrait — hidden on tablet/mobile via CSS */}
-        <div className="hero-portrait">
-          <AsciiPortrait cols={60} rows={38} fontSize={10} />
-          <div
-            className="dither-label"
-            style={{
-              position: 'absolute',
-              top: 8,
-              left: 10,
-              fontSize: 9,
-              opacity: 0.55,
-              letterSpacing: 1,
-              padding: '2px 6px',
-            }}
-          >
-            DITHER · SRC: PORTRAIT_00
-          </div>
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 8,
-              right: 10,
-              fontSize: 9,
-              opacity: 0.55,
-            }}
-          >
-            60×38 · 10pt · bayer
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="work-divider">
-        <div
-          style={{
-            borderTop: '1px dashed var(--border-dashed)',
-            width: '100%',
-            opacity: 0.5,
-          }}
-        />
+      <div className="pgfoot mono mut">
+        <span>Index — 01 / 04</span>
+        <span>Next: Work →</span>
       </div>
-
-      {/* Selected Work */}
-      <div className="work-section">
-        <div
-          style={{
-            fontSize: 10,
-            opacity: 0.5,
-            letterSpacing: 1.2,
-            marginBottom: 16,
-          }}
-        >
-          /SELECTED WORK ————
-        </div>
-        <div className="work-grid">
-          {selectedWork.map((p) => {
-            const focused = focusCard === p.num;
-            return (
-              <div
-                key={p.num}
-                className="project-card"
-                data-focused={focused}
-                onMouseEnter={() => setFocusCard(p.num)}
-                onMouseLeave={() => setFocusCard(null)}
-                style={{ padding: '14px 16px' }}
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    fontSize: 10,
-                    opacity: 0.6,
-                    letterSpacing: 1,
-                  }}
-                >
-                  <span>PROJ.{p.num}</span>
-                  <span>&apos;{p.year}</span>
-                </div>
-                <div
-                  style={{
-                    fontSize: 22,
-                    fontWeight: 500,
-                    letterSpacing: -0.8,
-                    marginTop: 4,
-                  }}
-                >
-                  <ScrambleText active={focused}>{p.title}</ScrambleText>
-                </div>
-                <div
-                  style={{
-                    fontSize: 11,
-                    opacity: focused ? 0.8 : 0.65,
-                    marginTop: 4,
-                  }}
-                >
-                  {p.blurb}
-                </div>
-                {focused && (
-                  <a
-                    href="/projects"
-                    style={{
-                      position: 'absolute',
-                      top: 12,
-                      right: 16,
-                      color: ACCENT,
-                      fontSize: 14,
-                    }}
-                  >
-                    →
-                  </a>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
+    </section>
   );
 }
